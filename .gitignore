@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.idea/
+.vscode/
+*.id0
+*.id1
+*.id2
+*.id3
+*.id4
+*.idb
+*.i64
+*.nam
+*.til
+*.dmp
