@@ -1,63 +1,67 @@
 <p align="center">
-  <img width="100%" src="./assets/neko-crack-lab-banner.png" alt="NekoCrack Lab — pink cyber-neko reverse engineering laboratory" />
+  <img width="100%" src="./assets/reverse-engineering-lab-banner.png" alt="Reverse Engineering Lab — binary analysis, control-flow reconstruction, and memory inspection" />
 </p>
 
-<h1 align="center">₊˚⊹♡ NekoCrack Lab ♡⊹˚₊</h1>
+# Reverse Engineering Lab
 
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=18&pause=1100&color=FF65AD&center=true&vCenter=true&width=760&lines=crackmes+%E2%80%A2+keygens+%E2%80%A2+tiny+virtual+machines;from+assembly+to+readable+algorithms+%F0%9F%90%BE;learn+%E2%86%92+verify+%E2%86%92+document" alt="NekoCrack Lab introduction" />
-</p>
+[![Tests](https://github.com/Reallifeisnotsugoi/Reverse-Engineering-Lab/actions/workflows/ci.yml/badge.svg)](https://github.com/Reallifeisnotsugoi/Reverse-Engineering-Lab/actions/workflows/ci.yml)
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
+![Platform](https://img.shields.io/badge/Platform-Windows-0078D4?logo=windows11&logoColor=white)
+![Focus](https://img.shields.io/badge/Focus-Binary%20Analysis-253858)
 
-<p align="center">
-  <a href="https://github.com/Reallifeisnotsugoi/NekoCrack-Lab/actions/workflows/ci.yml">
-    <img src="https://img.shields.io/github/actions/workflow/status/Reallifeisnotsugoi/NekoCrack-Lab/ci.yml?branch=main&style=for-the-badge&label=tests&labelColor=FFF0F6&color=FF65AD" alt="Tests" />
-  </a>
-  <img src="https://img.shields.io/badge/Python-3.10%2B-FFF0F6?style=for-the-badge&logo=python&logoColor=FF4FA3" alt="Python 3.10+" />
-  <img src="https://img.shields.io/badge/focus-reverse_engineering-FDE7F3?style=for-the-badge&logo=hackaday&logoColor=E84A9B" alt="Reverse engineering" />
-</p>
+A structured collection of educational crackme analyses, reconstructed
+validation algorithms, and small verification tools. The repository documents
+the complete path from initial triage to a reproducible result rather than
+publishing passwords or patches without context.
 
-<p align="center">୨ৎ ─────── 🐾 ─────── ୨ৎ</p>
+The detailed write-ups are currently written in Russian. Code, commands,
+artifacts, and repository structure use English naming conventions.
 
-Практическая лаборатория по разбору учебных **crackme**: от поиска строк и
-анализа ветвлений до восстановления keygen-алгоритмов и устройства небольшой
-виртуальной машины.
+## Scope
 
-Здесь фиксируется не только найденный ответ, но и воспроизводимый путь к нему:
-точка входа в анализ, важные инструкции, восстановленный алгоритм и проверка
-результата. Милое оформление — серьёзная методика. ฅ^•ﻌ•^ฅ
+The project demonstrates practical experience in:
 
-## 🌸 write-up collection
+- static analysis of Windows PE executables;
+- control-flow and cross-reference analysis in IDA Pro;
+- dynamic validation with x64dbg and ScyllaHide;
+- reconstruction of serial and key-generation routines;
+- analysis of anti-debug behaviour and custom virtual machines;
+- translation of recovered logic into tested Python implementations.
 
-| Сложность | Задание | Подход | Результат |
-| :---: | --- | --- | :---: |
-| `01` | [maxpsgers — Easy crackme](writeups/level-01/easy-crackme.md) | Строки, xrefs, проверка ввода | ✅ |
-| `01` | [svidnet — ZEXOR v0.1](writeups/level-01/zexor-v0.1.md) | Строки, branch patching | ✅ |
-| `02` | [prestdayzero — Bob's gambling](writeups/level-02/bobs-gambling.md) | Статический анализ ветвлений | ✅ |
-| `02` | [DonCris — S.N.A.P.](writeups/level-02/santa-network-admin-portal.md) | Восстановление ELF ID | ✅ keygen |
-| `02` | [DonCris — New Year Resolution Vault 2026](writeups/level-02/new-year-resolution-vault-2026.md) | Псевдокод, anti-debug, динамика | ✅ keygen |
-| `02` | [Kryptos — Simple login](writeups/level-02/simple-login.md) | Динамика, восстановление хеша | ✅ keygen |
-| `02` | [wolverine2k — OldSoft KeyGenMe #2](writeups/level-02/oldsoft-keygenme-2.md) | Декомпиляция serial-функции | ✅ keygen |
-| `02` | [Ploxied — Calculator](writeups/level-02/ploxieds-calculator.md) | Анализ поведения | ✅ |
-| `03` | [CorpCons — EasyVM](writeups/level-03/easyvm.md) | Восстановление ISA виртуальной машины | ✅ |
-| `03` | [Coder_90 — KeyGenMeV3](writeups/level-03/keygenme-v3.md) | Исследование keygen | 🚧 |
-
-## 🍡 lab structure
+## Repository structure
 
 ```text
-NekoCrack-Lab/
+Reverse-Engineering-Lab/
 ├── writeups/
-│   ├── level-01/        # базовый анализ и patching
-│   ├── level-02/        # восстановление алгоритмов
-│   └── level-03/        # VM и более сложные задачи
-├── tools/               # чистые реализации keygen-алгоритмов
-│   └── tests/           # контрольные значения
-└── .github/workflows/   # автоматическая проверка инструментов
+│   ├── level-01/        # strings, xrefs, and basic patching
+│   ├── level-02/        # algorithm and keygen reconstruction
+│   └── level-03/        # virtual machines and advanced tasks
+├── tools/               # clean-room Python implementations
+│   └── tests/           # known-value and edge-case tests
+└── .github/
+    ├── workflows/       # continuous integration
+    └── ISSUE_TEMPLATE/  # structured write-up proposals
 ```
 
-## 🎀 tiny tools
+## Analysis index
 
-В [`tools`](tools) лежат независимо написанные реализации восстановленных
-алгоритмов на Python. Они используют только стандартную библиотеку.
+| Level | Target | Primary technique | Status |
+| :---: | --- | --- | :---: |
+| 1 | [maxpsgers — Easy crackme](writeups/level-01/easy-crackme.md) | Strings, xrefs, input validation | Complete |
+| 1 | [svidnet — ZEXOR v0.1](writeups/level-01/zexor-v0.1.md) | Branch analysis and patching | Complete |
+| 2 | [prestdayzero — Bob's gambling](writeups/level-02/bobs-gambling.md) | Static control-flow analysis | Complete |
+| 2 | [DonCris — S.N.A.P.](writeups/level-02/santa-network-admin-portal.md) | ELF ID reconstruction | Complete + tool |
+| 2 | [DonCris — New Year Resolution Vault 2026](writeups/level-02/new-year-resolution-vault-2026.md) | Pseudocode, anti-debug, dynamic analysis | Complete + tool |
+| 2 | [Kryptos — Simple login](writeups/level-02/simple-login.md) | Dynamic analysis and hash recovery | Complete + tool |
+| 2 | [wolverine2k — OldSoft KeyGenMe #2](writeups/level-02/oldsoft-keygenme-2.md) | Serial routine decompilation | Complete + tool |
+| 2 | [Ploxied — Calculator](writeups/level-02/ploxieds-calculator.md) | Behavioural analysis | Complete |
+| 3 | [CorpCons — EasyVM](writeups/level-03/easyvm.md) | Custom instruction-set reconstruction | Complete |
+| 3 | [Coder_90 — KeyGenMeV3](writeups/level-03/keygenme-v3.md) | Keygen research | In progress |
+
+## Reproduced algorithms
+
+The scripts in [`tools/`](tools) are independent implementations of recovered
+logic and require only the Python standard library.
 
 ```bash
 python tools/santa_elf_id.py "username"
@@ -66,36 +70,34 @@ python tools/simple_login.py "kisikismeowmeow"
 python tools/oldsoft_keygenme2.py "username"
 ```
 
-Запуск всех контрольных примеров:
+Run the validation suite locally:
 
 ```bash
 python -m unittest discover -s tools/tests -v
 ```
 
-## 🐈 analysis workflow
+The same suite runs on Python 3.10 and 3.13 through GitHub Actions.
 
-1. Зафиксировать источник, архитектуру и ожидаемое поведение программы.
-2. Провести первичный статический анализ: строки, импорты, xrefs и граф потока управления.
-3. Подтвердить гипотезы в отладчике, если статического анализа недостаточно.
-4. Восстановить алгоритм в минимальном скрипте и добавить контрольный тест.
-5. Описать ограничения решения и альтернативный путь, например patching.
+## Methodology
 
-Основной набор: **IDA Pro · x64dbg · ScyllaHide · Python · C++**.
+Each investigation follows the same baseline process:
 
-## 💌 contribute
+1. Record the source, architecture, and expected program behaviour.
+2. Perform initial static triage: strings, imports, cross-references, and control flow.
+3. Use a debugger to validate hypotheses that static analysis cannot confirm.
+4. Reimplement the recovered algorithm in a minimal, reviewable script.
+5. Add known-value tests and document assumptions, limitations, and alternatives.
 
-Уточнения, дополнительные объяснения и новые разборы приветствуются. Перед pull
-request загляните в [CONTRIBUTING.md](CONTRIBUTING.md).
+This format keeps observations, hypotheses, and verified conclusions separate.
 
-> [!IMPORTANT]
-> Материалы предназначены только для crackme, CTF и программ, на анализ которых
-> у вас есть явное разрешение. Репозиторий не распространяет бинарные файлы;
-> оригинальные задания принадлежат их авторам.
+## Responsible use
 
-<p align="center">୨ৎ ─────── 🐈‍⬛ ─────── ୨ৎ</p>
+This repository is limited to educational crackmes, CTF challenges, and
+software for which explicit analysis permission exists. It does not distribute
+challenge binaries, third-party source code, secrets, or personal data.
 
-<p align="center">
-  <b>learn softly · analyze deeply · document clearly</b><br />
-  <sub>made with curiosity, hex dumps and tiny paw prints ♡</sub><br />
-  <sub>ฅ^._.^ฅ</sub>
-</p>
+## Contributing
+
+Corrections and additional technical explanations are welcome. See
+[CONTRIBUTING.md](CONTRIBUTING.md) for the required write-up structure and local
+validation steps.

@@ -1,32 +1,32 @@
-name: Новый write-up
-description: Предложить crackme для разбора или новый материал
+name: New write-up
+description: Propose a crackme analysis or new research material
 title: "[Write-up]: "
 labels: ["write-up"]
 body:
   - type: markdown
     attributes:
-      value: "Не прикладывайте бинарные файлы. Достаточно ссылки на легальный источник задания."
+      value: "Do not attach binaries. A link to a legitimate challenge source is sufficient."
   - type: input
     id: source
     attributes:
-      label: Источник
-      description: Ссылка на страницу crackme или CTF-задания
+      label: Source
+      description: Link to the crackme or CTF challenge page
     validations:
       required: true
   - type: dropdown
     id: status
     attributes:
-      label: Статус
+      label: Status
       options:
-        - Предложение задания
-        - Черновик разбора
-        - Исправление существующего разбора
+        - Challenge proposal
+        - Draft analysis
+        - Correction to an existing write-up
     validations:
       required: true
   - type: textarea
     id: details
     attributes:
-      label: Подробности
-      description: Архитектура, инструменты, подход и ожидаемый результат
+      label: Details
+      description: Architecture, tools, approach, and expected outcome
     validations:
       required: true

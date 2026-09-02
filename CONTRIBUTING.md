@@ -1,30 +1,34 @@
-# Как внести вклад
+# Contributing
 
-Спасибо за интерес к проекту. Цель репозитория — создавать технически точные и воспроизводимые разборы учебных crackme.
+Thank you for your interest in the project. The goal of this repository is to
+produce technically accurate and reproducible analyses of educational
+crackmes.
 
-## Новый write-up
+## New write-up
 
-1. Работайте только с crackme, CTF или программой, на анализ которой у вас есть разрешение.
-2. Добавьте Markdown-файл в каталог соответствующего уровня.
-3. Укажите автора задания, платформу, архитектуру, источник и использованные инструменты.
-4. Разделите материал на постановку задачи, статический анализ, динамическую проверку, восстановленный алгоритм и результат.
-5. Не публикуйте бинарные файлы, чужой исходный код, секреты или персональные данные.
-6. Если алгоритм можно воспроизвести, добавьте небольшой скрипт в `tools/` и тест в `tools/tests/`.
+1. Work only with a crackme, CTF challenge, or program you are authorized to analyse.
+2. Add a Markdown file to the appropriate level directory under `writeups/`.
+3. Record the challenge author, platform, architecture, source, and tools used.
+4. Separate the problem statement, static analysis, dynamic validation, recovered algorithm, and result.
+5. Do not publish binaries, third-party source code, secrets, or personal data.
+6. When an algorithm can be reproduced, add a minimal script to `tools/` and tests to `tools/tests/`.
 
-## Стиль
+## Technical writing
 
-- Объясняйте, почему конкретная инструкция или ветка важна для решения.
-- Отделяйте подтвержденные факты от предположений.
-- Для чисел указывайте систему счисления, если она не очевидна.
-- Используйте короткие фрагменты дизассемблера вместо больших дампов.
-- Добавляйте `alt`-текст к изображениям.
+- Explain why each relevant instruction, branch, or data structure matters.
+- Keep confirmed observations separate from hypotheses.
+- State the numeric base when it is not obvious from context.
+- Prefer short disassembly excerpts over large dumps.
+- Add descriptive alternative text to every image.
+- Include enough information for another analyst to reproduce the result.
 
-## Локальная проверка
+## Local validation
 
-Перед отправкой изменений выполните:
+Run the full test suite before submitting changes:
 
 ```bash
 python -m unittest discover -s tools/tests -v
 ```
 
-Pull request должен кратко описывать задание, выбранный подход и способ проверки результата.
+A pull request should briefly describe the target, chosen approach, and method
+used to validate the conclusion.
